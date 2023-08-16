@@ -21,12 +21,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Serveron
-      run: node server.js
-           sleep 5  # Give the server some time to start
-    - name: Stop Server
-      run: pkill -f "server.js"
-
+    - name: Start Server
+      run: node server.js & sleep 5  # Give the server some time to start
 
     - name: Run tests
       run: npm test
+
+    - name: Stop Server
+      run: pkill -f "server.js" 
