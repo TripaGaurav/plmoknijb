@@ -21,5 +21,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Serveron
+      run: node server.js
+
     - name: Run tests
       run: npm test
