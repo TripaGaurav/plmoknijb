@@ -24,6 +24,9 @@ jobs:
     - name: Serveron
       run: node server.js
            sleep 5  # Give the server some time to start
+    - name: Stop Server
+      run: pkill -f "server.js"
+
 
     - name: Run tests
       run: npm test
